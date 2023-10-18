@@ -24,7 +24,7 @@ class Bijou
     private ?float $prixLocation = null;
 
     #[ORM\ManyToOne(inversedBy: 'bijous')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?Categorie $idCategorie = null;
 
     public function getId(): ?int

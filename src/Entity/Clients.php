@@ -33,10 +33,10 @@ class Clients
     #[ORM\Column(length: 75)]
     private ?string $email = null;
 
-    #[ORM\Column(length: 10)]
+    #[ORM\Column(length: 25)]
     private ?string $telFixe = null;
 
-    #[ORM\Column(length: 10)]
+    #[ORM\Column(length: 25)]
     private ?string $telPortable = null;
 
     #[ORM\OneToMany(mappedBy: 'idClient', targetEntity: Location::class)]
