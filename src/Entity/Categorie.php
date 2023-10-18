@@ -6,6 +6,9 @@ use App\Repository\CategorieRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+
+#[ApiResource()] 
 
 #[ORM\Entity(repositoryClass: CategorieRepository::class)]
 class Categorie
@@ -30,12 +33,6 @@ class Categorie
     {
         return $this->id;
     }
-
-    public function getNom(): ?string
-    {
-        return $this->nom;
-    }
-
     public function setNom(string $nom): static
     {
         $this->nom = $nom;
