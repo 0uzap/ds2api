@@ -6,9 +6,13 @@ use App\Repository\BijouRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\ApiFilter;
+use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
 
-#[ApiResource()] 
-
+#[ApiResource(
+    paginationItemsPerPage: 10,
+)] 
+#[ApiFilter(OrderFilter::class, properties:['prixVente'=>'ASC'])]
 #[ORM\Entity(repositoryClass: BijouRepository::class)]
 class Bijou
 {
